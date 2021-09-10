@@ -18,14 +18,14 @@ class _HomepageState extends State<Homepage> {
   Future apicall() async {
     http.Response response;
     response = await http.get(
-      Uri.parse('https://reqres.in/api/users?page=2'),
+      Uri.parse('https://cdn-api.co-vin.in/api/v2/admin/location/states'),
       headers: {"Accept": "application/json"},
     );
     if (response.statusCode == 200) {
       setState(() {
         stringResponse = response.body;
         mapResponse = json.decode(response.body);
-        listResponse = mapResponse!['data'];
+        listResponse = mapResponse!['states'];
       });
     }
   }
@@ -42,17 +42,11 @@ class _HomepageState extends State<Homepage> {
       appBar: AppBar(title: Text("Homepage")),
       body: ListView.builder(
         itemBuilder: (context, index) {
-          return Container(
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Image.network(listResponse![index]['avatar']),
-                ),
-                Text(listResponse![index]['id'].toString()),
-                Text(listResponse![index]['first_name'].toString()),
-                Text(listResponse![index]['last_name'].toString()),
-              ],
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ListTile(
+              title: Text(listResponse![index]['state_id'].toString()),
+              subtitle: Text(listResponse![index]['state_name'].toString()),
             ),
           );
         },

@@ -1,5 +1,9 @@
+// file not used
+
 class Model {
   var states;
+  var state_id;
+  var state_name;
   List<Item> items;
 
   Model({required this.states, required this.items});
