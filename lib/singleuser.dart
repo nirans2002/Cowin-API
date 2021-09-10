@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-
+import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 String? stringResponse;
+Map? mapResponse;
+Map? dataResponse;
 
 class Homepage extends StatefulWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -21,6 +23,8 @@ class _HomepageState extends State<Homepage> {
     if (response.statusCode == 200) {
       setState(() {
         stringResponse = response.body;
+        mapResponse = json.decode(response.body);
+        dataResponse = mapResponse!['data'];
       });
     }
   }
@@ -38,7 +42,9 @@ class _HomepageState extends State<Homepage> {
       body: Container(
         color: Colors.grey,
         child: Center(
-          child: Text(stringResponse.toString()),
+          child: mapResponse == null
+              ? Text('failed to fetch data')
+              : Text(dataResponse!['email'].toString()),
         ),
       ),
     );
