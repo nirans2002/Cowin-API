@@ -16,15 +16,11 @@ class Model {
 }
 
 class Item {
-  // ignore: non_constant_identifier_names
   int state_id;
-  // ignore: non_constant_identifier_names
   String state_name;
 
   Item({
-    // ignore: non_constant_identifier_names
     required this.state_id,
-    // ignore: non_constant_identifier_names
     required this.state_name,
   });
 

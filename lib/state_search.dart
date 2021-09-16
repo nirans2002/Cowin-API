@@ -23,7 +23,6 @@ Future<Model> getStates() async {
     var jsonString = response.body;
     Map<String, dynamic> jsonMap = json.decode(jsonString);
     model = Model.fromJson(jsonMap);
-    print(Item);
 
     return model;
   } else {

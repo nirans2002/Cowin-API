@@ -39,7 +39,7 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Homepage")),
+      appBar: AppBar(title: const Text("Homepage")),
       body: ListView.builder(
         itemBuilder: (context, index) {
           return Padding(
