@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'model.dart';
+import 'modal/modal.dart';
 import 'dart:convert';
 
 class StateSearch extends StatefulWidget {
@@ -12,31 +12,9 @@ class StateSearch extends StatefulWidget {
   _StateSearchState createState() => _StateSearchState();
 }
 
-// final List stateList;
-Future<Model> getStates() async {
-  var model;
-  var response = await http.get(
-    Uri.parse('https://cdn-api.co-vin.in/api/v2/admin/location/states'),
-    headers: {"Accept": "application/json"},
-  );
-  if (response.statusCode == 200) {
-    var jsonString = response.body;
-    Map<String, dynamic> jsonMap = json.decode(jsonString);
-    model = Model.fromJson(jsonMap);
-
-    return model;
-  } else {
-    throw Exception('Failed to fetch !');
-  }
-}
-
 class _StateSearchState extends State<StateSearch> {
-  late Future<Model> model;
   @override
-  void initState() {
-    super.initState();
-    model = getStates();
-  }
+  void initState() {}
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +29,7 @@ class _StateSearchState extends State<StateSearch> {
             Text("Select State"),
             Center(
               child: ElevatedButton(
-                onPressed: getStates,
+                onPressed: () {},
                 child: Text("press"),
               ),
             ),
