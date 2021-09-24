@@ -23,7 +23,7 @@ class _HomepageState extends State<Homepage> {
     );
     if (response.statusCode == 200) {
       setState(() {
-        stringResponse = response.body;
+        // stringResponse = response.body;
         mapResponse = json.decode(response.body);
         listResponse = mapResponse!['states'];
       });

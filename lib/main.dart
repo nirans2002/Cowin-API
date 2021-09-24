@@ -1,3 +1,4 @@
+import 'package:cowin_api/singleuser.dart';
 import 'package:cowin_api/state_search.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const StateSearch(),
+      home: const Homepage(),
       debugShowCheckedModeBanner: false,
     );
   }

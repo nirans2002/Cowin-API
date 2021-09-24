@@ -1,3 +1,7 @@
 https://medium.com/flutter-community/parsing-complex-json-in-flutter-747c46655f51
 
 
+    Uri.parse('https://cdn-api.co-vin.in/api/v2/admin/location/states'),
+
+    
+https://tsvillain.medium.com/parsing-complex-json-in-flutter-7e96de6cc12c
