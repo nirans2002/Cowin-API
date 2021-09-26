@@ -40,7 +40,13 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Homepage")),
-      body: ListView.builder(
+      body: listofstates(),
+    );
+  }
+
+  Center listofstates() {
+    return Center(
+      child: ListView.builder(
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.all(8.0),
